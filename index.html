@@ -137,7 +137,7 @@
   <script src="data/emissions.js"></script>
 </head>
 
-<body class="bg-deep-navy text-slate-300 font-sans h-screen flex flex-col antialiased overflow-hidden">
+<body class="bg-deep-navy text-slate-300 font-sans min-h-screen flex flex-col antialiased overflow-x-hidden">
   <!-- BEGIN: Header -->
   <header class="border-b border-slate-800 px-6 py-3 flex justify-between items-center sticky top-0 z-[1000] bg-deep-navy/95 backdrop-blur-sm">
     <div class="flex items-center gap-2">
@@ -152,10 +152,10 @@
   <!-- END: Header -->
 
   <!-- BEGIN: Main Content Grid -->
-  <main class="flex-grow flex min-h-0 overflow-hidden max-w-[1600px] mx-auto w-full p-3 md:p-4 gap-4">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 w-full h-full">
+  <main class="flex-grow flex flex-col lg:flex-row min-h-0 max-w-[1600px] mx-auto w-full p-3 md:p-4 gap-4 overflow-y-auto lg:overflow-hidden">
+    <div class="flex flex-col lg:grid lg:grid-cols-12 gap-4 w-full h-full min-h-0">
       <!-- BEGIN: Left Sidebar (Controls & Info) -->
-      <aside class="lg:col-span-4 flex flex-col gap-4 overflow-y-auto pr-3 custom-scrollbar h-full min-h-0 pb-10">
+      <aside class="lg:col-span-4 flex flex-col gap-4 overflow-y-auto lg:overflow-y-auto pr-0 lg:pr-3 custom-scrollbar h-auto lg:h-full min-h-0 flex-shrink-0">
       <!-- Section: Title & Intro -->
       <section class="flex-shrink-0 pt-2 px-1">
         <h2 class="font-serif text-xl md:text-2xl text-white font-bold leading-tight mb-2">
@@ -253,9 +253,9 @@
     </aside>
     <!-- END: Left Sidebar -->
     <!-- BEGIN: Right Main Content (Map) -->
-    <div class="lg:col-span-8 flex flex-col relative h-full rounded-xl overflow-hidden border border-white/10 bg-black shadow-2xl min-h-0">
+    <div class="lg:col-span-8 flex flex-col relative h-[500px] lg:h-full rounded-xl overflow-hidden border border-white/10 bg-black shadow-2xl min-h-[400px] lg:min-h-0 flex-shrink-0">
       <!-- Map Container -->
-      <div id="map" class="relative w-full bg-map-ocean flex-grow min-h-0 z-0"></div>
+      <div id="map" class="relative w-full bg-map-ocean h-full z-0"></div>
       
       <!-- Map Caption Bar -->
       <div class="bg-card-bg border-t border-white/10 p-3 text-xs text-slate-400 text-center">
