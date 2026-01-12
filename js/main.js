@@ -28,6 +28,15 @@ var map = L.map('map', {
   maxBoundsViscosity: 1.0
 }).setView([20, 0], 2);
 
+// Force map to recalculate size after a short delay to ensure visibility on mobile/slow loads
+setTimeout(function() {
+  map.invalidateSize();
+}, 500);
+
+window.addEventListener('resize', function() {
+  map.invalidateSize();
+});
+
 L.control.zoom({ position: 'topleft' }).addTo(map);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
